@@ -1,16 +1,12 @@
-import loadData from "./api";
+import makeRequest from "./api";
 
 export const createTableData = async () => {
-  try {
-    const tableItems = await loadData();
-    return tableItems.map((item) => ({
-      name: item.name,
-      count: item.count,
-    }));
-  } catch (error) {
-    console.error("Error fetching table data:", error);
-    return [];
-  }
+  const tableItems = await makeRequest();
+  
+  return tableItems.map((item) => ({
+    name: item.name,
+    count: item.count,
+  }));
 };
 
 export default createTableData;

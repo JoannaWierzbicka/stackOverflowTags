@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -10,20 +10,23 @@ import Paper from "@mui/material/Paper";
 import TablePaginationActions from "../utils/tablePagination";
 import createTableData from "../utils/createTableData";
 import CircularProgress from "@mui/material/CircularProgress";
+import { Alert } from "@mui/material";
 
 export default function MainTable() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [rows, setRows] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await createTableData();
+
         setRows(data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        setError(error.data.error_message);
       } finally {
         setIsLoading(false);
       }
@@ -44,6 +47,8 @@ export default function MainTable() {
     setPage(0);
   };
   if (isLoading) return <CircularProgress color="secondary" />;
+  if (error) return <Alert severity="error">{error}</Alert>;
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
