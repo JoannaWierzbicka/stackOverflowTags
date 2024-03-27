@@ -1,13 +1,14 @@
 // import { useState } from 'react'
+import { Container } from '@mui/material'
 import './App.css'
 import MainTable from './components/MainTable'
 
 function App() {
   
   return (
-   <div>
+   <Container disableGutters>
     <MainTable/>
-   </div>
+   </Container>
   )
 }
 
