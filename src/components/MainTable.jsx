@@ -28,36 +28,6 @@ export default function MainTable() {
   const [error, setError] = useState(null);
   const [orderBy, setOrderBy] = useState("");
   const [order, setOrder] = useState("asc");
-  // const rows = [
-  //   {
-  //     name: "ssss",
-  //     count: 434343,
-  //   },
-  //   {
-  //     name: "tttt",
-  //     count: 357357,
-  //   },
-  //   {
-  //     name: "aaaaf",
-  //     count: 35735637,
-  //   },
-  //   {
-  //     name: "bbbf",
-  //     count: 474758,
-  //   },
-  //   {
-  //     name: "bbnc",
-  //     count: 6586,
-  //   },
-  //   {
-  //     name: "cccc",
-  //     count: 23525,
-  //   },
-  //   {
-  //     name: "kkkk",
-  //     count: 325325,
-  //   },
-  // ];
 
   useEffect(() => {
     const fetchData = async () => {
