@@ -21,6 +21,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.24.1",
     "@chromatic-com/storybook": "^1.2.25",
     "@storybook/addon-essentials": "^8.0.5",
     "@storybook/addon-interactions": "^8.0.5",

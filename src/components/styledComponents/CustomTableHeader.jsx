@@ -1,4 +1,4 @@
-import {TableHead} from "@mui/material";
+import { TableHead } from "@mui/material";
 import { handleRequestSort } from "../../utils/handleSort";
 import NorthIcon from "@mui/icons-material/North";
 import SouthIcon from "@mui/icons-material/South";
@@ -10,7 +10,7 @@ export const CustomTableHeader = (props) => {
   const { setOrder, setOrderBy, orderBy, order } = props;
   return (
     <TableHead>
-      <StyledTableRow>
+      <StyledTableRow >
         <StyledTableCell
           sx={{ cursor: "pointer" }}
           onClick={() =>
@@ -73,6 +73,7 @@ CustomTableHeader.propTypes = {
   setOrderBy: PropTypes.func,
   orderBy: PropTypes.string,
   order: PropTypes.string,
+  title: PropTypes.string
 };
 
 export default CustomTableHeader;

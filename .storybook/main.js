@@ -6,7 +6,7 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
-    "@storybook/addon-interactions",
+    "@storybook/addon-interactions"
   ],
   framework: {
     name: "@storybook/react-vite",
@@ -15,5 +15,9 @@ const config = {
   docs: {
     autodocs: "tag",
   },
+  "babel": async (options) => ({
+    ...options,
+    presets: [...options.presets, "@babel/preset-react"],
+  }),
 };
 export default config;

@@ -74,7 +74,7 @@ export default function MainTable() {
   return (
     <>
       <Typography variant="h5" sx={{ marginBottom: "30px" }}>
-        StackOverflow TAGS Table
+      StackOverflow TAGS Table
       </Typography>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 400 }} aria-label="custom pagination table">
